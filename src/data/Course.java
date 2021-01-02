@@ -8,6 +8,7 @@ public class Course extends AbstractTeachingUnit {
         super(courseName, courseID, credit);
     }
 
+
     public double getMoyenne(Student student) {
         double note = -1;
         if(!hasStudent(student)) {return -2;}
@@ -70,7 +71,19 @@ public class Course extends AbstractTeachingUnit {
         double meanOfDiffs = acc / nombreNote;
         return Math.sqrt(meanOfDiffs);
     }
+    @Override
+    public boolean equals(Object obj) {
+        boolean areEqual = false;
+        if (obj instanceof Course course){
+            areEqual = Objects.equals(course.getID(),course.getName());
+        }
+        return areEqual;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getID(),this.getName());
+    }
 
     public String toString()
     {

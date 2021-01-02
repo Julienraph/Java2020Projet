@@ -13,13 +13,13 @@ import java.util.List;
 
 
 public class CheckBlocs extends JFrame implements ActionListener {
-    private HashMap<String, JCheckBox> checkBoxHash = new HashMap<>();
-    private List<String> selectedBox = new ArrayList<>();
-    private JButton okButton;
-    private JButton cancelButton;
-    private Table table;
-    private int checkBoxNumber;
-    private JPanel checkBoxPanel;
+    private final HashMap<String, JCheckBox> checkBoxHash = new HashMap<>();
+    private final List<String> selectedBox = new ArrayList<>();
+    private final JButton okButton;
+    private final JButton cancelButton;
+    private final Table table;
+    private final int checkBoxNumber;
+    private final JPanel checkBoxPanel;
 
     CheckBlocs(Table table, int checkBoxNumber) {
         this.table = table;
@@ -28,14 +28,14 @@ public class CheckBlocs extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout());
         this.setLocationRelativeTo(null);
 
-        JPanel contentPane = (JPanel) this.getContentPane();
+        JPanel contentPane = (JPanel)this.getContentPane();
         contentPane.setLayout(new BorderLayout());
         checkBoxPanel = new JPanel();
         checkBoxPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.anchor = GridBagConstraints.WEST;
-
+        // theses panel Button not seen in the right Layout
         JPanel panelButton = new JPanel((new FlowLayout(FlowLayout.RIGHT)));
         cancelButton = new JButton("CANCEL");
         okButton = new JButton("OK");
@@ -128,8 +128,8 @@ public class CheckBlocs extends JFrame implements ActionListener {
 
     public void initCheckStudent(GridBagConstraints gbc) {
         List<Student> listStudent = new ArrayList<Student>(table.getXmlReader().getMapStudent().values());
-        Comparator comparator = StudentComparator.sortName(true);
-        Collections.sort(listStudent, comparator);
+        Comparator<Student> comparator = StudentComparator.sortName(true);
+        listStudent.sort(comparator);
         for (Student student : listStudent) {
             checkBoxPanel.add(createCheckBox(student), gbc);
         }

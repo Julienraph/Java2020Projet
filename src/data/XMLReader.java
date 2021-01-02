@@ -4,21 +4,24 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class XMLReader {
-    private HashMap<String, Student> mapStudent;
-    private HashMap<String, Course> mapCourse;
-    private HashMap<String, Program> mapProgram;
-    private HashMap<String, Bloc> mapBlocs;
+    private final HashMap<String, Student> mapStudent;
+    private final HashMap<String, Course> mapCourse;
+    private final HashMap<String, Program> mapProgram;
+    private final HashMap<String, Bloc> mapBlocs;
 
     public XMLReader() {
         this.mapStudent = new HashMap<>();
@@ -30,7 +33,11 @@ public class XMLReader {
 
     public void initMap() {
         try {
-            File file = new File("C:\\Users\\rjuli\\Documents\\GitHub\\javaProject2020\\data.xml");
+            File dir = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/");
+            dir.mkdirs();
+            File file = new File (dir, "data.xml");
+            //File file = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/data.xml");
+
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(file); // ouverture et lecture du fichier XML
@@ -52,7 +59,7 @@ public class XMLReader {
                 Program program = new Program(name, identifier);
                 List<Element> blocList = getChildren(programElement);
                 for (Element blocElement : blocList) {
-                    if (blocElement.getTagName() == "option" || blocElement.getTagName() == "composite") {
+                    if (blocElement.getTagName().equals("option") || blocElement.getTagName().equals("composite")) {
                         String blocName = blocElement.getElementsByTagName("name").item(0).getTextContent();
                         String blocID = blocElement.getElementsByTagName("identifier").item(0).getTextContent();
                         BlocComposite blocComposite = new BlocComposite(blocName, blocID);
@@ -60,15 +67,15 @@ public class XMLReader {
                         List<Element> itemList = getChildren(blocElement, "item");
                         for (Element item : itemList) {
                             String coursID = item.getTextContent();
-                            if (blocElement.getTagName() == "option") {
+                            if (blocElement.getTagName().equals("option")) {
                                 blocOption.addCourses(mapCourse.get(coursID));
                             } else { blocComposite.addCourses(mapCourse.get(coursID)); }
                         }
-                        if (blocElement.getTagName() == "option") {
+                        if (blocElement.getTagName().equals("option")) {
                             program.addBloc(blocOption);
                         } else { program.addBloc(blocComposite); }
                     }
-                    if (blocElement.getTagName() == "item") {
+                    if (blocElement.getTagName().equals("item")) {
                         String blocSimpleID = blocElement.getTextContent();
                         BlocSimple blocSimple = new BlocSimple(mapCourse.get(blocSimpleID).getName(), blocSimpleID);
                         blocSimple.addCourses(mapCourse.get(blocSimpleID));
@@ -105,8 +112,10 @@ public class XMLReader {
                     mapBlocs.put(bloc.getID(), bloc);
                 }
             }
-        } catch (Exception e) {
+        } catch (XMLReaderException | ParserConfigurationException readerException) {
             System.out.println("ERROR");
+        } catch (SAXException | IOException e) {
+            e.printStackTrace();
         }
 
 

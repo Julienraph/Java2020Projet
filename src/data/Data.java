@@ -1,18 +1,23 @@
 package data;
+
+import gui.Table;
 import java.util.*;
 
 public class Data {
     static XMLReader xmlReader = new XMLReader();
 
-    public static String[][] initData(List<TeachingUnit> blocs, List<Student> listStudent, Comparator comparator, boolean isProgram, boolean isDisplayStudent, List<Program> programList) {
-        Collections.sort(listStudent, comparator);
-        List<TeachingUnit> listCoursBlocs = blocs;
-        String[][] data;
+    public Data(Table table) {
+        xmlReader = table.getXmlReader();
+    }
+
+    public static String[][] initData(List<TeachingUnit> blocs, List<Student> listStudent, Comparator<Student> comparator, boolean isProgram, boolean isDisplayStudent, List<Program> programList) {
+        listStudent.sort(comparator);
+        String[][] data ;
 
         /* Si j'affiche les étudiants, j'ajoute 4 lignes (pour Note Max, Note Min, Note Moyenne et Ecart-Type)
         Et j'ajoute 3 colonne pour l'ID, le nom et le prénom des étudiants */
-        if(isDisplayStudent) {data = new String[listStudent.size()+4][listCoursBlocs.size()+3+programList.size()];}
-        else {data = new String[listStudent.size()][listCoursBlocs.size()+programList.size()];}
+        if(isDisplayStudent) {data = new String[listStudent.size()+4][blocs.size()+3+programList.size()];}
+        else {data = new String[listStudent.size()][blocs.size()+programList.size()];}
 
 
         for (int i = 0; i < listStudent.size(); i++) {
@@ -33,8 +38,8 @@ public class Data {
                 column += programList.size();
             }
 
-            for (int j = 0; j < listCoursBlocs.size(); j++) {
-                TeachingUnit teachingUnit = listCoursBlocs.get(j);
+            for (int j = 0; j < blocs.size(); j++) {
+                TeachingUnit teachingUnit = blocs.get(j);
                 double note = teachingUnit.getMoyenne(listStudent.get(i));
                 if(note >= 0) {data[i][j+column] = String.format("%.3f", note);}
                 if (note == -2) {data[i][j+column] = String.format("");}
@@ -66,8 +71,8 @@ public class Data {
                 }
             }
             column = programList.size() + 3;
-            for (int j = 0; j < listCoursBlocs.size(); j++) {
-                TeachingUnit teachingUnit = listCoursBlocs.get(j);
+            for (int j = 0; j < blocs.size(); j++) {
+                TeachingUnit teachingUnit = blocs.get(j);
                 data[i][j + column] = String.format("%.3f", teachingUnit.getNoteMax(listStudent));
                 data[i + 1][j + column] = String.format("%.3f", teachingUnit.getNoteMin(listStudent));
                 data[i + 2][j + column] = String.format("%.3f", teachingUnit.getNoteMoyenne(listStudent));
@@ -92,16 +97,14 @@ public class Data {
     }
 
     /* Créer une liste des cours/blocs des blocs passé en paramètre.
-    Cette fonction à principalement comme objectif de dissocier les cours des bloc simples
+    Cette fonction a principalement comme objectif de dissocier les cours des bloc simples
     pour ne pas à avoir à afficher deux fois les mêmes cours (Un Bloc Simple est en quelque sorte un cours)
-    Cette fonction est utilisé dans le cas où on veut afficher des blocs ("Choisir Blocs" dans l'interface)
+    Cette fonction est utilisée dans le cas où on veut afficher des blocs ("Choisir Blocs" dans l'interface)
      */
     public static List<TeachingUnit> BlocToList(List<Bloc> blocList) {
         HashSet<AbstractTeachingUnit> listBlocCours = new HashSet<>();
         for(Bloc bloc : blocList) {
-            for(Course course : bloc.getBlocCourses()) {
-                listBlocCours.add(course);
-            }
+            listBlocCours.addAll(bloc.getBlocCourses());
             if(!(bloc.getClass() == BlocSimple.class)) {
                 listBlocCours.add(bloc);
             }
@@ -112,9 +115,9 @@ public class Data {
 
 
 
-    /* Créer une liste de String qui sont le nom des colonnes
-    Cette liste est créer selon ce qu'on veut afficher
-     */
+    /* Créer une liste de String qui est le nom des colonnes
+    Cette liste est créée en fonction de  ce que l'on veut afficher*/
+
     public static String[] initColumnName(List<Program> programList, List<TeachingUnit> listCoursBlocs, boolean isDisplayStudent) {
         String[] columnName;
         int column = 0;
@@ -142,14 +145,12 @@ public class Data {
 
 
     /* Fonction intermédiaire de ProgramToBlocs
-    Créer une liste de cours/blocs DU programme passé en paramètre
+    Créer une liste de cours/blocs du programme passé en paramètre
      */
     public static List<AbstractTeachingUnit> initCoursProgram(Program program) {
         List<AbstractTeachingUnit> listBlocCours = new ArrayList<>();
         for(Bloc bloc : program.getBlocs()) {
-            for(Course course : bloc.getBlocCourses()) {
-                listBlocCours.add(course);
-            }
+            listBlocCours.addAll(bloc.getBlocCourses());
             if(!(bloc.getClass() == BlocSimple.class)) {
                 listBlocCours.add(bloc);
             }
@@ -158,7 +159,7 @@ public class Data {
     }
 
     /* Créer une liste des cours suivis par les étudiants passé en paramètre.
-    Cette fonction est utilisé dans le cas où on veut afficher les notes d'un/plusieurs étudiants
+    Cette fonction est utilisée dans le cas où on veut afficher les notes d'un ou plusieurs étudiants
     ("Choisir Student" dans l'interface)
      */
     public static List<TeachingUnit> initCoursStudent(List<Student> listStudent) {
@@ -169,11 +170,10 @@ public class Data {
                 listBlocCours.add(xmlReader.getMapCourse().get(courseID));
             }
         }
-        List<TeachingUnit> listBloc = new ArrayList<>(listBlocCours);
-        return listBloc;
+        return new ArrayList<>(listBlocCours);
     }
 
-    /* Prend la liste complète des étudiants de l'Université et filtre cette liste pour avoir uniquement
+    /* La fonction initListStudent prend la liste complète des étudiants de l'Université et filtre cette liste pour avoir uniquement
      les étudiants qui suivent un des programmes de la liste passé en paramètre
    */
     public static List<Student> initListStudents(List<Student> listStudent, List<Program> listProgram) {
@@ -188,25 +188,25 @@ public class Data {
         return listStudentProgram;
     }
 
-    /* Prend la liste complète des étudiants de l'Université et filtre cette liste pour avoir uniquement
+    /* La fonction  initListStudentsBlocs prend la liste complète des étudiants de l'Université et filtre cette liste pour avoir uniquement
       les étudiants qui suivent au moins un cours de la liste passé en paramètre.
   */
     public static List<Student> initListStudentsBlocs(List<Student> listStudent, List<TeachingUnit> ListUnit) {
         List<Student> listStudentUnit = new ArrayList<>();
-            for (Student student : listStudent) {
-                boolean hasNote = false;
-                for(TeachingUnit teachingUnit : ListUnit) {
-                    if (student.getNotesMap().containsKey(teachingUnit.getID())) {
-                        hasNote = true;
-                    }
+        for (Student student : listStudent) {
+            boolean hasNote = false;
+            for(TeachingUnit teachingUnit : ListUnit) {
+                if (student.getNotesMap().containsKey(teachingUnit.getID())) {
+                    hasNote = true;
                 }
-                if(hasNote) {
-                    listStudentUnit.add(student);
-                }
+            }
+            if(hasNote) {
+                listStudentUnit.add(student);
+            }
         }
         return listStudentUnit;
     }
-
+    /*La fonction getStudentProgram prend en paramètres un étudiant et renvoie la liste des ID des programmes qu'il suit */
     public static Program getStudentProgram(Student student) {
         return xmlReader.getMapProgram().get(student.getProgramID());
     }

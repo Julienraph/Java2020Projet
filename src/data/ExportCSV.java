@@ -12,14 +12,14 @@ public class ExportCSV {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < columnName.length; i++) {
-                sb.append(String.format("\"%s\",", columnName[i]));
+            for (String s : columnName) {
+                sb.append(String.format("\"%s\",", s));
             }
             pw.println(sb);
-            for (int i = 0; i < data.length; i++) {
+            for (String[] datum : data) {
                 sb = new StringBuilder();
                 for (int j = 0; j < data[0].length; j++) {
-                    sb.append(String.format("\"%s\",", data[i][j]));
+                    sb.append(String.format("\"%s\",", datum[j]));
                 }
                 pw.println(sb);
             }

@@ -2,10 +2,10 @@ package data;
 import java.util.*;
 
 public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface, TeachingUnit {
-    private String blocName;
-    private String blocID;
+    private final String blocName;
+    private final String blocID;
     private int blocCredits = 0;
-    private HashSet<Course> blocCourses;
+    private final HashSet<Course> blocCourses;
 
     public Bloc(String blocName, String blocID) {
         super(blocName, blocID);
@@ -43,7 +43,7 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
     public HashSet<Course> getBlocCourses() {
         return blocCourses;
     }
-
+    /**/
     public double getMoyenne(Student student) {
         double res = 0;
         double absent = -1;
@@ -64,7 +64,7 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
         }
         return res / this.blocCredits;
     }
-
+    /**/
     public double getNoteMoyenne(List<Student> studentList) {
         int nbNotes = 0;
         double sommeNotes = 0;

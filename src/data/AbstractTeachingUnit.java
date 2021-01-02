@@ -3,9 +3,9 @@ package data;
 import java.util.Objects;
 
 public abstract class AbstractTeachingUnit implements TeachingUnit {
-    private String name;
+    private final String name;
     private int credit;
-    private String ID;
+    private final String  ID;
 
     public AbstractTeachingUnit(String name, String ID) {
         this.name = name;
@@ -38,5 +38,15 @@ public abstract class AbstractTeachingUnit implements TeachingUnit {
     @Override
     public int hashCode() {
         return ID.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AbstractTeachingUnit{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", credit=").append(credit);
+        sb.append(", ID='").append(ID).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

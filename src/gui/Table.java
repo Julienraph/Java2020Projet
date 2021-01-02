@@ -1,5 +1,6 @@
 package gui;
 
+//import com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel;
 import data.*;
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -10,7 +11,7 @@ import java.util.*;
 import java.util.List;
 
 public class Table extends JFrame {
-    private JTable table;
+    private final JTable table;
     private String[][] data;
     private String[] columnNames;
     private XMLReader xmlReader = new XMLReader();
@@ -46,7 +47,7 @@ public class Table extends JFrame {
         gui.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         gui.setSize(1000,500);
         gui.setLocationRelativeTo(null);
-        gui.setTitle("Université Nice");
+        gui.setTitle("Université Côte d'Azur");
         gui.setVisible(true);
     }
 
@@ -128,7 +129,7 @@ public class Table extends JFrame {
         if(lastUpdate == 2) {updateTableModelStudent();}
     }
 
-    //Créer l'arborescence des programmes
+    /*La méthode  createTree crée l'arborescence des programmes*/
     private JTree createTree() {
         List<Program> programList = new ArrayList<Program>(xmlReader.getMapProgram().values());
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Université de Nice");
@@ -157,8 +158,10 @@ public class Table extends JFrame {
 
     public void ajouterStudent(Student student) {
         xmlReader.getMapStudent().put(student.getIdentifier(), student);
+        xmlReader.getMapStudent().get(student.getIdentifier()).getNotesMap().put("SLUIN501", 15.0);
         listStudentParameter.add(student);
         update();
+
     }
 
 

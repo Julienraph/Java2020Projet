@@ -1,5 +1,7 @@
 package data;
 
+import gui.Table;
+
 import java.util.*;
 
 public class Test {
@@ -17,7 +19,7 @@ public class Test {
         StudentComparator studentcompa = new StudentComparator();
         Comparator<Student> comparator = studentcompa.sortName(true);
         Student student = xmlReader.getMapStudent().get("21781843");
-        Data dataclass = new Data();
+        Data dataclass = new Data(new Table());
 
     }
 }
