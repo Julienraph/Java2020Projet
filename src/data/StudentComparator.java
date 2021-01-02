@@ -27,12 +27,10 @@ public class StudentComparator {
     }
 
     public static Comparator<Student> sortCoursNote(String coursID, boolean ascending) {
-        Comparator<Student> studentComparator = new Comparator<Student>() {
-            public int compare(Student student1, Student student2) {
-                double noteS1 = student1.getNoteCours(coursID);
-                double noteS2 = student2.getNoteCours(coursID);
-                return Double.compare(noteS1, noteS2);
-            }
+        Comparator<Student> studentComparator = (student1, student2) -> {
+            double noteS1 = student1.getNoteCours(coursID);
+            double noteS2 = student2.getNoteCours(coursID);
+            return Double.compare(noteS1, noteS2);
         };
         return toAscending(studentComparator, ascending);
     }
