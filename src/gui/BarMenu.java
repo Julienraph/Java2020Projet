@@ -5,6 +5,7 @@ import data.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class BarMenu extends JFrame {
     JButton displayStudent;
     JButton displayTree;
     JButton addStudent;
+    JButton filtrer;
     Boolean isDisplayTree = true;
 
     public BarMenu (Table table) {
@@ -26,32 +28,57 @@ public class BarMenu extends JFrame {
 
     public JMenuBar createMenu() {
         JMenuBar menuBar = new JMenuBar();
-        JMenu menuFile = new JMenu("File");
+        JMenu menuFile = new JMenu("Fichier");
+        JMenu choisir = new JMenu("Affichage");
 
         JMenuItem menuCSV = new JMenuItem("Enregistrer en CSV", KeyEvent.VK_S);
-        JMenuItem menuChoisirBlocs = new JMenuItem("Choisir Blocs");
-        JMenuItem menuChoisirProgram = new JMenuItem("Choisir Programmes");
+        JMenuItem menuQuitter = new JMenuItem("Quitter");
+
+        JMenuItem menuChoisirBlocs = new JMenuItem("Choisir Bloc");
+        JMenuItem menuChoisirProgram = new JMenuItem("Choisir Programme");
         JMenuItem menuChoisirStudent = new JMenuItem("Choisir Student");
+
         displayStudent = new JButton("Désactiver étudiants");
-        displayTree = new JButton("Arborescence des programmes ");
-        addStudent = new JButton("ajouter student");
+        displayTree = new JButton("Arborescence des programmes");
+        addStudent = new JButton("Ajouter Etudiant");
+        filtrer = new JButton("Filtrer");
 
         menuCSV.addActionListener(this::MenuCSVListener);
+        menuQuitter.addActionListener(this::quitter);
         menuChoisirBlocs.addActionListener(this::MenuChoisirBlocs);
         menuChoisirProgram.addActionListener(this::MenuChoisirProgram);
         menuChoisirStudent.addActionListener(this::MenuChoisirStudent);
         displayStudent.addActionListener(this::ButtonDisplayStudent);
         displayTree.addActionListener(this::buttonDisplayTree);
         addStudent.addActionListener(this::addStudent);
+        //filtrer.addActionListener(this::);
 
+        ImageIcon menuCSVIcon = new ImageIcon(getClass().getResource("images/save.png"));
+        menuCSV.setIcon(menuCSVIcon);
+        ImageIcon menuQuitterIcon = new ImageIcon(getClass().getResource("images/exit.png"));
+        menuQuitter.setIcon(menuQuitterIcon);
+        ImageIcon blocIcon = new ImageIcon(getClass().getResource("images/bloc.png"));
+        menuChoisirBlocs.setIcon(blocIcon);
+        ImageIcon programIcon = new ImageIcon(getClass().getResource("images/program.png"));
+        menuChoisirProgram.setIcon(programIcon);
+        ImageIcon etudiantIcon = new ImageIcon(getClass().getResource("images/student.png"));
+        menuChoisirStudent.setIcon(etudiantIcon);
+
+        menuQuitter.setMnemonic(KeyEvent.VK_Q);
+        menuQuitter.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.ALT_DOWN_MASK));
         menuCSV.setMnemonic(KeyEvent.VK_S);
         menuCSV.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
 
         menuBar.add(menuFile);
+        menuBar.add(choisir);
+
         menuFile.add(menuCSV);
-        menuFile.add(menuChoisirBlocs);
-        menuFile.add(menuChoisirProgram);
-        menuFile.add(menuChoisirStudent);
+        menuFile.add(menuQuitter);
+
+        choisir.add(menuChoisirBlocs);
+        choisir.add(menuChoisirProgram);
+        choisir.add(menuChoisirStudent);
+
         menuBar.add(displayStudent);
         menuBar.add(displayTree);
         menuBar.add(addStudent);
@@ -100,5 +127,9 @@ public class BarMenu extends JFrame {
     private void addStudent(ActionEvent event) {
         Student student = new Student("22335843", "Aais", "Arnaud", new Program("L3 Informatique", "SLINF3 180"));
         table.ajouterStudent(student);
+    }
+
+    private void quitter(ActionEvent event) {
+        System.exit(0);
     }
 }
