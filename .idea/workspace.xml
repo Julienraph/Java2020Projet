@@ -8,25 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fec3d7a-5234-4562-9ba0-244aba8cd842" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/XMLReaderException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java2020.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AbstractTeachingUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/AbstractTeachingUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Bloc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Bloc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/BlocOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BlocOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/ExportCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ExportCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/StudentComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudentComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/XMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/XMLReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CheckBlocs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CheckBlocs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,8 +121,23 @@
       <workItem from="1609436374513" duration="182000" />
       <workItem from="1609436666936" duration="1335000" />
       <workItem from="1609500946903" duration="25508000" />
-      <workItem from="1609573173681" duration="11690000" />
+      <workItem from="1609573173681" duration="13491000" />
     </task>
+    <task id="LOCAL-00001" summary="Modification jalon 3">
+      <created>1609590824998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609590824998</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Insertion de Lambda Calcul dans comparator">
+      <created>1609592378659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609592378659</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +145,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Modification jalon 3" />
+    <MESSAGE value="Insertion de Lambda Calcul dans comparator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insertion de Lambda Calcul dans comparator" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
