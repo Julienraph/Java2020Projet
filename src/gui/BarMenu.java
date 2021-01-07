@@ -90,6 +90,8 @@ public class BarMenu extends JFrame {
     }
 
     private void MenuCSVListener(ActionEvent event) {
+        ExportXML exportXML = new ExportXML(table);
+        exportXML.exportXML();
         ExportCSV exportCSV = new ExportCSV();
         exportCSV.exportCSV(table.getData(), table.getColumnNames());
     }
@@ -120,11 +122,10 @@ public class BarMenu extends JFrame {
     private void buttonDisplayTree(ActionEvent event) {
         if (isDisplayTree) {
             table.getContentPane().getComponent(1).setVisible(false);
-            isDisplayTree = !isDisplayTree;
         } else {
             table.getContentPane().getComponent(1).setVisible(true);
-            isDisplayTree = !isDisplayTree;
         }
+        isDisplayTree = !isDisplayTree;
         table.revalidate();
     }
 
@@ -135,8 +136,31 @@ public class BarMenu extends JFrame {
     }
 
     private void addStudent(ActionEvent event) {
-        Student student = new Student("22335843", "Aais", "Arnaud", new Program("L3 Informatique", "SLINF3 180"));
-        table.addStudent(student);
+        JTextField studentID = new JTextField();
+        JTextField studentName = new JTextField();
+        JTextField studentSurname = new JTextField();
+        JTextField studentProgram = new JTextField();
+        Object[] message = {
+                "N° étudiant :", studentID,
+                "Nom:", studentSurname,
+                "Prénom :", studentName,
+                "Programme :", studentProgram
+        };
+        int n = JOptionPane.showConfirmDialog(null, message, "Ajouter un étudiant", JOptionPane.OK_CANCEL_OPTION);
+        if(n == JOptionPane.OK_OPTION) {
+            Program program = table.getXmlReader().getMapProgram().get(studentProgram.getText());
+            if(studentID.getText().equals("") || studentName.getText().equals("") || studentSurname.getText().equals("")) {
+                JOptionPane.showMessageDialog(this, "Veuillez remplir les informations", "ERROR"
+                        , JOptionPane.ERROR_MESSAGE);
+            }
+            if (program == null && !(studentID.getText().equals("") || studentName.getText().equals("") || studentSurname.getText().equals(""))) {
+                JOptionPane.showMessageDialog(this, "Veuillez saisir un programme existant", "ERROR"
+                        , JOptionPane.ERROR_MESSAGE);
+            }
+            if (program != null && !(studentID.getText().equals("") || studentName.getText().equals("") || studentSurname.getText().equals(""))) {
+                table.addStudent(new Student(studentID.getText(), studentName.getText(), studentSurname.getText(), program));
+            }
+        }
     }
 
 

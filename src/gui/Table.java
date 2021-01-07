@@ -43,7 +43,7 @@ public class Table extends JFrame {
         Table gui = new Table();
         BarMenu menu = new BarMenu(gui);
         gui.setJMenuBar(menu.createMenu());
-        gui.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        gui.setDefaultCloseOperation(EXIT_ON_CLOSE);
         gui.setSize(1000,500);
         gui.setLocationRelativeTo(null);
         gui.setTitle("Université Côte d'Azur");
@@ -154,8 +154,8 @@ public class Table extends JFrame {
         }
         return tree;
     }
-    /*Cette fonction permet d'ajouter un étudiant de la liste des étudiants*/
 
+    /*Cette fonction permet d'ajouter un étudiant de la liste des étudiants*/
     public void addStudent(Student student) {
         xmlReader.getMapStudent().put(student.getIdentifier(), student);
         xmlReader.getMapStudent().get(student.getIdentifier()).getNotesMap().put("SLUIN501", 15.0);
@@ -164,26 +164,16 @@ public class Table extends JFrame {
     }
 
     /*Cette fonction permet de supprimer de la classe student un étudiant de la liste*/
-
-   /* public void deleteStudent(Student student){
-        xmlReader.getMapStudent().put(student.getIdentifier(),student);
-        xmlReader.getMapStudent().get(student.getIdentifier()).getNotesMap().get(student);
-        listStudentParameter.remove(student);
-        update();
-    }*/
-
     public void deleteStudent(String identifier){
         Student student = xmlReader.getMapStudent().get(identifier);
         if (student !=  null){
             String.format("L'étudiant %s de n°INE :%s sera supprimé de la liste ",student.getName(), student.getIdentifier());
-            xmlReader.getMapStudent().remove(student);
+            xmlReader.getMapStudent().remove(identifier);
             listStudentParameter.remove(student);
         }else {
             JOptionPane.showMessageDialog(this,"Aucun étudiant réfèrencé à cette Identifiant !","Numéro étudiant INCORRECT"
                     ,JOptionPane.ERROR_MESSAGE);
         }
-        xmlReader.getMapStudent().remove(student);
-        listStudentParameter.remove(student);
         update();
     }
 

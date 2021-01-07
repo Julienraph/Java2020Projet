@@ -35,10 +35,9 @@ public class XMLReader {
 
     public void initMap() {
         try {
-            File dir = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/");
+            File dir = new File("C:\\Users\\rjuli\\Documents\\GitHub\\Projet2020\\src");
             dir.mkdirs();
             File file = new File (dir, "data.xml");
-           // File file = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/data.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(file);; // ouverture et lecture du fichier XML
@@ -101,7 +100,7 @@ public class XMLReader {
                     String noteString = gradeElement.getElementsByTagName("value").item(0).getTextContent();
                     double note = - 1;
                     if (!noteString.equals("ABI")) {
-                        note = Double.parseDouble(noteString);
+                        note = (Double) Double.parseDouble(noteString);
                     }
                     student.getNotesMap().put(matiere, note);
                 }

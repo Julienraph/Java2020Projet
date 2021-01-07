@@ -2,22 +2,20 @@ package data;
 
 import gui.Table;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.Locale;
 import java.util.Map;
 
 public class ExportXML {
+    private Table table;
+
     public ExportXML(Table table) {
         this.table = table;
     }
 
-    private final Table table;
-
     public void exportXML() {
         try {
-            FileWriter fw = new FileWriter("data.xml");
+            FileWriter fw = new FileWriter(new File("C:\\Users\\rjuli\\Documents\\GitHub\\Projet2020\\src", "data.xml"));
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             XMLReader xmlReader = table.getXmlReader();
@@ -73,14 +71,15 @@ public class ExportXML {
                         String courseID = noteCourseEntry.getKey();
                         Double note = noteCourseEntry.getValue();
                         pw.println("        <grade>");
-                        pw.println(String.format("          <item>%d</item>", courseID));
-                        pw.println(String.format("          <value>%d</value>", courseID));
+                        pw.println(String.format("          <item>%s</item>", courseID));
+                        System.out.println(note);
+                        pw.println(String.format(Locale.ROOT,"          <value>%.2f</value>", note));
                         pw.println("        </grade>");
                     }
                     pw.println("    </student>");
                 }
             }
-            pw.println("</data");
+            pw.println("</data>");
             pw.close();
 
         } catch (IOException e) {
