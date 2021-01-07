@@ -11,7 +11,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,11 +38,10 @@ public class XMLReader {
             File dir = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/");
             dir.mkdirs();
             File file = new File (dir, "data.xml");
-            //File file = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/data.xml");
-
+           // File file = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/data.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(file); // ouverture et lecture du fichier XML
+            Document doc = dBuilder.parse(file);; // ouverture et lecture du fichier XML
             doc.getDocumentElement().normalize(); // normalise le contenu du fichier, opération très conseillée
             Element root = doc.getDocumentElement(); // la racine de l'arbre XML
 
@@ -106,7 +107,7 @@ public class XMLReader {
                 }
             }
 
-            for (Map.Entry<String, Program> entry : mapProgram.entrySet()) {
+            for (Map.Entry<String,Program> entry : mapProgram.entrySet()) {
                 Program program = entry.getValue();
                 for(Bloc bloc : program.getBlocs()) {
                     mapBlocs.put(bloc.getID(), bloc);
@@ -120,8 +121,6 @@ public class XMLReader {
 
 
     }
-
-
 
     public HashMap<String, Student> getMapStudent() {
         return mapStudent;
@@ -139,7 +138,8 @@ public class XMLReader {
         return mapBlocs;
     }
 
-    // Extrait la liste des fils de l'élément item dont le tag est name
+    /* Extrait de la liste des fils de l'élément item dont le tag est name */
+
     private static List<Element> getChildren(Element item, String name) {
         NodeList nodeList = item.getChildNodes();
         List<Element> children = new ArrayList<>();

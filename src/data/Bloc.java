@@ -43,7 +43,8 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
     public HashSet<Course> getBlocCourses() {
         return blocCourses;
     }
-    /**/
+
+    /*Calcul de la moyenne de chaque étudiant pour un cours donné */
     public double getMoyenne(Student student) {
         double res = 0;
         double absent = -1;
@@ -64,7 +65,7 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
         }
         return res / this.blocCredits;
     }
-    /**/
+    /*Calcul de la moyenne générale d'une liste d'étudiant */
     public double getNoteMoyenne(List<Student> studentList) {
         int nbNotes = 0;
         double sommeNotes = 0;
@@ -77,7 +78,7 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
         }
         return sommeNotes / nbNotes;
     }
-
+    /*Calcul de la note maximal pour une liste  d"étudiant  */
     public double getNoteMax(List<Student> studentList) {
         double max = 0;
         for (Student student : studentList) {
@@ -88,7 +89,7 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
         }
         return max;
     }
-
+    /*Calcul de la note minimal pour une liste  d"étudiant  */
     public double getNoteMin(List<Student> studentList) {
         double min = 20;
         for (Student student : studentList) {
@@ -99,7 +100,7 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
         }
         return min;
     }
-
+    /*Calcul de l'écart-type */
     public double getEcartType(List<Student> studentList) {
         List<Double> listNote = new ArrayList<>();
         double moyenne = this.getNoteMoyenne(studentList);
@@ -119,7 +120,18 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
         double meanOfDiffs = acc / listNote.size();
         return Math.sqrt(meanOfDiffs);
     }
-
+    @Override
+    public boolean equals(Object obj) {
+        boolean areEqual = false;
+        if (obj instanceof Bloc bloc){
+            areEqual = blocID.equals(bloc.blocID) && blocName.equals(bloc.blocName);
+        }
+        return areEqual;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), blocName, blocID);
+    }
 
     @Override
     public String toString() {
@@ -128,6 +140,4 @@ public abstract class Bloc extends AbstractTeachingUnit implements BlocInterface
                 ", blocCredits=" + blocCredits +
                 ", blocCourses=" + blocCourses + "\n";
     }
-
-
 }

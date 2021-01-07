@@ -1,6 +1,5 @@
 package gui;
 
-//import com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel;
 import data.*;
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -14,11 +13,11 @@ public class Table extends JFrame {
     private final JTable table;
     private String[][] data;
     private String[] columnNames;
-    private XMLReader xmlReader = new XMLReader();
+    private final XMLReader xmlReader = new XMLReader();
     private List<Program> programList = new ArrayList<>();
-    private DefaultTableModel tableModel = new DefaultTableModel();
+    private final DefaultTableModel tableModel = new DefaultTableModel();
     private List<TeachingUnit> listTeachingUnit;
-    private List<Student> listStudentFull =  new ArrayList<>(xmlReader.getMapStudent().values());
+    private final List<Student> listStudentFull =  new ArrayList<>(xmlReader.getMapStudent().values());
     private List<Student> listStudentParameter = new ArrayList<>();
     private Boolean isDisplayStudent = true;
     private Boolean isProgram = true;
@@ -132,7 +131,7 @@ public class Table extends JFrame {
     /*La méthode  createTree crée l'arborescence des programmes*/
     private JTree createTree() {
         List<Program> programList = new ArrayList<Program>(xmlReader.getMapProgram().values());
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Université de Nice");
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Université Côte d'Azur");
         JTree tree = new JTree(root);
         for(Program program : programList) {
             DefaultMutableTreeNode programNode = new DefaultMutableTreeNode(program.getProgramName());
@@ -155,13 +154,37 @@ public class Table extends JFrame {
         }
         return tree;
     }
+    /*Cette fonction permet d'ajouter un étudiant de la liste des étudiants*/
 
-    public void ajouterStudent(Student student) {
+    public void addStudent(Student student) {
         xmlReader.getMapStudent().put(student.getIdentifier(), student);
         xmlReader.getMapStudent().get(student.getIdentifier()).getNotesMap().put("SLUIN501", 15.0);
         listStudentParameter.add(student);
-        update();
+       update();
+    }
 
+    /*Cette fonction permet de supprimer de la classe student un étudiant de la liste*/
+
+   /* public void deleteStudent(Student student){
+        xmlReader.getMapStudent().put(student.getIdentifier(),student);
+        xmlReader.getMapStudent().get(student.getIdentifier()).getNotesMap().get(student);
+        listStudentParameter.remove(student);
+        update();
+    }*/
+
+    public void deleteStudent(String identifier){
+        Student student = xmlReader.getMapStudent().get(identifier);
+        if (student !=  null){
+            String.format("L'étudiant %s de n°INE :%s sera supprimé de la liste ",student.getName(), student.getIdentifier());
+            xmlReader.getMapStudent().remove(student);
+            listStudentParameter.remove(student);
+        }else {
+            JOptionPane.showMessageDialog(this,"Aucun étudiant réfèrencé à cette Identifiant !","Numéro étudiant INCORRECT"
+                    ,JOptionPane.ERROR_MESSAGE);
+        }
+        xmlReader.getMapStudent().remove(student);
+        listStudentParameter.remove(student);
+        update();
     }
 
 

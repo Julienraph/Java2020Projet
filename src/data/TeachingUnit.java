@@ -2,7 +2,7 @@ package data;
 
 import java.util.List;
 
-public interface TeachingUnit {
+public interface TeachingUnit{
     public double getNoteMoyenne(List<Student> list);
     public double getNoteMax(List<Student> studentList);
     public double getNoteMin(List<Student> studentList);

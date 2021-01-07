@@ -30,14 +30,15 @@ public abstract class AbstractTeachingUnit implements TeachingUnit {
     public int getCredit() { return this.credit; }
 
     @Override
-    public boolean equals(Object o) {
-        AbstractTeachingUnit that = (AbstractTeachingUnit) o;
-        return ID.equals(that.ID);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof AbstractTeachingUnit teachingUnit)) return false;
+        return getName().equals(teachingUnit.getName()) && getID().equals(teachingUnit.getID());
     }
 
     @Override
     public int hashCode() {
-        return ID.hashCode();
+        return Objects.hash(getName(),getID());
     }
 
     @Override

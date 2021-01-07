@@ -67,8 +67,9 @@ public class Program {
     /*duplication de code , cherher une méthode pour remédier à ce problème*/
     public double getNoteMax(List<Student> studentList) {
         double max = 0;
-        for(Student student : studentList) {
-            if(student.getProgram().getProgramID().equals(this.getProgramID())) {
+        for (int i = 0, studentListSize = studentList.size(); i < studentListSize; i++) {
+            Student student = studentList.get(i);
+            if (student.getProgram().getProgramID().equals(this.getProgramID())) {
                 double moyenne = this.getMoyenne(student);
                 if (moyenne > max && moyenne >= 0) {
                     max = moyenne;
@@ -113,6 +114,7 @@ public class Program {
         double meanOfDiffs = acc / listNote.size();
         return Math.sqrt(meanOfDiffs);
     }
+
     @Override
     public boolean equals(Object obj) {
         boolean areEqual = false;

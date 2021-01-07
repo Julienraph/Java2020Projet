@@ -5,6 +5,7 @@ import data.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -14,7 +15,7 @@ public class BarMenu extends JFrame {
     JButton displayStudent;
     JButton displayTree;
     JButton addStudent;
-    JButton filtrer;
+    JButton deleteStudent;
     Boolean isDisplayTree = true;
 
     public BarMenu (Table table) {
@@ -41,7 +42,7 @@ public class BarMenu extends JFrame {
         displayStudent = new JButton("Désactiver étudiants");
         displayTree = new JButton("Arborescence des programmes");
         addStudent = new JButton("Ajouter Etudiant");
-        filtrer = new JButton("Filtrer");
+        deleteStudent = new JButton("Supprimer Etudiant");
 
         menuCSV.addActionListener(this::MenuCSVListener);
         menuQuitter.addActionListener(this::quitter);
@@ -51,7 +52,8 @@ public class BarMenu extends JFrame {
         displayStudent.addActionListener(this::ButtonDisplayStudent);
         displayTree.addActionListener(this::buttonDisplayTree);
         addStudent.addActionListener(this::addStudent);
-        //filtrer.addActionListener(this::);
+        deleteStudent.addActionListener(this::deleteStudent);
+
 
         ImageIcon menuCSVIcon = new ImageIcon(getClass().getResource("images/save.png"));
         menuCSV.setIcon(menuCSVIcon);
@@ -82,6 +84,8 @@ public class BarMenu extends JFrame {
         menuBar.add(displayStudent);
         menuBar.add(displayTree);
         menuBar.add(addStudent);
+        menuBar.add(deleteStudent);
+
         return menuBar;
     }
 
@@ -124,10 +128,17 @@ public class BarMenu extends JFrame {
         table.revalidate();
     }
 
+    private void deleteStudent(ActionEvent event) {
+        String message = "Quel est le numéro étudiant? ";
+        String studentID = JOptionPane.showInputDialog(this, message, "Effacer étudiant", JOptionPane.PLAIN_MESSAGE);
+        table.deleteStudent(studentID);
+    }
+
     private void addStudent(ActionEvent event) {
         Student student = new Student("22335843", "Aais", "Arnaud", new Program("L3 Informatique", "SLINF3 180"));
-        table.ajouterStudent(student);
+        table.addStudent(student);
     }
+
 
     private void quitter(ActionEvent event) {
         System.exit(0);

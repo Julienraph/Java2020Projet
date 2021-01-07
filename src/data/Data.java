@@ -42,8 +42,10 @@ public class Data {
                 TeachingUnit teachingUnit = blocs.get(j);
                 double note = teachingUnit.getMoyenne(listStudent.get(i));
                 if(note >= 0) {data[i][j+column] = String.format("%.3f", note);}
-                if (note == -2) {data[i][j+column] = String.format("");}
-                if (note == -1) {data[i][j+column] = String.format("ABI");}
+                if (note == -2) {data[i][j+column] = "";}
+                if (note == -1) {
+                    data[i][j + column] = "ABI";
+                }
             }
         }
 
@@ -83,7 +85,7 @@ public class Data {
     }
 
 
-    /* Créer une liste de cours/blocs des programmes passé en paramètre
+    /* Créer une liste de cours/blocs des programmes passée en paramètre
     L'objectif est ainsi d'avoir une liste qui contient les notes des cours/blocs à afficher de tous les programmes
      qu'on souhaite afficher
       */
@@ -92,8 +94,7 @@ public class Data {
         for(Program program : programList) {
             listBlocCours.addAll(initCoursProgram(program));
         }
-        List<TeachingUnit> listBloc = new ArrayList<>(listBlocCours);
-        return listBloc;
+        return new ArrayList<>(listBlocCours);
     }
 
     /* Créer une liste des cours/blocs des blocs passé en paramètre.
@@ -109,7 +110,8 @@ public class Data {
                 listBlocCours.add(bloc);
             }
         }
-        List<TeachingUnit> listBloc = new ArrayList<>(listBlocCours);
+        List<TeachingUnit> listBloc;
+        listBloc = new ArrayList<>(listBlocCours);
         return listBloc;
     }
 
@@ -128,8 +130,8 @@ public class Data {
             columnName[2] = "Surname";
             column += 3;
         } else {columnName = new String[listCoursBlocs.size() + programList.size()];}
-        for(int k = 0; k < programList.size(); k++) {
-            columnName[column] = (String.format("%s - %s", programList.get(k).getProgramID(), programList.get(k).getProgramName()));
+        for (Program program : programList) {
+            columnName[column] = (String.format("%s - %s", program.getProgramID(), program.getProgramName()));
             column += 1;
         }
         for (int i = 0; i < listCoursBlocs.size(); i++) {
@@ -137,8 +139,8 @@ public class Data {
                 columnName[i + column] = (String.format("%s - %s", listCoursBlocs.get(i).getName(), listCoursBlocs.get(i).getID()));
             }
         }
-        for(int i = 0; i < columnName.length; i++) {
-            System.out.println(columnName[i]);
+        for (String s : columnName) {
+            System.out.println(s);
         }
         return columnName;
     }
@@ -206,7 +208,8 @@ public class Data {
         }
         return listStudentUnit;
     }
-    /*La fonction getStudentProgram prend en paramètres un étudiant et renvoie la liste des ID des programmes qu'il suit */
+    /*La fonction getStudentProgram prend en paramètres un étudiant et renvoie la liste des ID des programmes
+    qu'il suit */
     public static Program getStudentProgram(Student student) {
         return xmlReader.getMapProgram().get(student.getProgramID());
     }
