@@ -35,7 +35,7 @@ public class XMLReader {
 
     public void initMap() {
         try {
-            File dir = new File("C:\\Users\\rjuli\\Documents\\GitHub\\Projet2020\\src");
+            File dir = new File("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src");
             dir.mkdirs();
             File file = new File (dir, "data.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

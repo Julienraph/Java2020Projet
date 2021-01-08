@@ -29,8 +29,9 @@ public class BarMenu extends JFrame {
 
     public JMenuBar createMenu() {
         JMenuBar menuBar = new JMenuBar();
-        JMenu menuFile = new JMenu("Fichier");
-        JMenu choisir = new JMenu("Affichage");
+        JMenu menuFile = new JMenu("Fichier  ");
+        JMenu choisir = new JMenu("Affichage ");
+        JMenu editMenu = new JMenu("Modification");
 
         JMenuItem menuCSV = new JMenuItem("Enregistrer en CSV", KeyEvent.VK_S);
         JMenuItem menuQuitter = new JMenuItem("Quitter");
@@ -38,6 +39,13 @@ public class BarMenu extends JFrame {
         JMenuItem menuChoisirBlocs = new JMenuItem("Choisir Bloc");
         JMenuItem menuChoisirProgram = new JMenuItem("Choisir Programme");
         JMenuItem menuChoisirStudent = new JMenuItem("Choisir Student");
+
+        JMenuItem menuAddCourse = new JMenuItem("Ajouter Cours");
+        JMenuItem menuAddNote = new JMenuItem("Ajouter/modifier note");
+        JMenuItem menuDeleteNote = new JMenuItem("Supprimer note");
+        JMenuItem menuAddStudent = new JMenuItem("Ajouter Etudiant");
+        JMenuItem menuDeletStudent = new JMenuItem("Effacer Etudiant");
+        //JMenuItem menuDeactivateStudent = new JMenuItem("Desactiver Etudiant");
 
         displayStudent = new JButton("Désactiver étudiants");
         displayTree = new JButton("Arborescence des programmes");
@@ -49,10 +57,16 @@ public class BarMenu extends JFrame {
         menuChoisirBlocs.addActionListener(this::MenuChoisirBlocs);
         menuChoisirProgram.addActionListener(this::MenuChoisirProgram);
         menuChoisirStudent.addActionListener(this::MenuChoisirStudent);
+        menuAddStudent.addActionListener(this::addStudent);
+        menuDeletStudent.addActionListener(this::deleteStudent);
+        //menuDeactivateStudent.addActionListener(this::ButtonDisplayStudent);
+        menuAddCourse.addActionListener(this::addPCourse);
+        menuAddNote.addActionListener(this::addNote);
+        menuDeleteNote.addActionListener(this::removeNote);
         displayStudent.addActionListener(this::ButtonDisplayStudent);
         displayTree.addActionListener(this::buttonDisplayTree);
-        addStudent.addActionListener(this::addStudent);
-        deleteStudent.addActionListener(this::deleteStudent);
+        //addStudent.addActionListener(this::addStudent);
+        //deleteStudent.addActionListener(this::deleteStudent);
 
 
         ImageIcon menuCSVIcon = new ImageIcon(getClass().getResource("images/save.png"));
@@ -73,6 +87,7 @@ public class BarMenu extends JFrame {
 
         menuBar.add(menuFile);
         menuBar.add(choisir);
+        menuBar.add(editMenu);
 
         menuFile.add(menuCSV);
         menuFile.add(menuQuitter);
@@ -81,10 +96,17 @@ public class BarMenu extends JFrame {
         choisir.add(menuChoisirProgram);
         choisir.add(menuChoisirStudent);
 
+        editMenu.add(menuAddCourse);
+        editMenu.add(menuAddNote);
+        editMenu.add(menuDeleteNote);
+        editMenu.add(menuAddStudent);
+        editMenu.add(menuDeletStudent);
+        //editMenu.add(menuDeactivateStudent);
+
         menuBar.add(displayStudent);
         menuBar.add(displayTree);
-        menuBar.add(addStudent);
-        menuBar.add(deleteStudent);
+        //menuBar.add(addStudent);
+        //menuBar.add(deleteStudent);
 
         return menuBar;
     }
@@ -129,12 +151,6 @@ public class BarMenu extends JFrame {
         table.revalidate();
     }
 
-    private void deleteStudent(ActionEvent event) {
-        String message = "Quel est le numéro étudiant? ";
-        String studentID = JOptionPane.showInputDialog(this, message, "Effacer étudiant", JOptionPane.PLAIN_MESSAGE);
-        table.deleteStudent(studentID);
-    }
-
     private void addStudent(ActionEvent event) {
         JTextField studentID = new JTextField();
         JTextField studentName = new JTextField();
@@ -163,6 +179,56 @@ public class BarMenu extends JFrame {
         }
     }
 
+    private void addNote(ActionEvent event) {
+        JTextField studentID = new JTextField();
+        JTextField courseID = new JTextField();
+        JTextField note = new JTextField();
+        Object[] message = {
+                "N° étudiant :", studentID,
+                "Code Cours:", courseID,
+                "Note :", note
+        };
+        int n = JOptionPane.showConfirmDialog(null, message, "Ajouter un étudiant", JOptionPane.OK_CANCEL_OPTION);
+        if(n == JOptionPane.OK_OPTION) {
+            table.addNote(studentID.getText(), courseID.getText(), note.getText());
+        }
+    }
+
+    public void addPCourse (ActionEvent event){
+        JTextField courseID = new JTextField();
+        JTextField courseName = new JTextField();
+        JTextField creditCourse = new JTextField();
+        Object [] msg = {
+                "Code cours" , courseID,
+                "Nom cours", courseName,
+                "Credit du cours ", creditCourse
+        };
+        int n = JOptionPane.showConfirmDialog(null, msg, "Ajouter un Cours", JOptionPane.OK_CANCEL_OPTION);
+        if(n == JOptionPane.OK_OPTION){
+            //Course course = table.getXmlReader().getMapCourse().get(courseID);
+            table.addCourse(courseID.getText(), courseName.getText(), creditCourse.getText());
+
+        }
+    }
+
+    private void removeNote(ActionEvent event) {
+        JTextField studentID = new JTextField();
+        JTextField courseID = new JTextField();
+        Object[] message = {
+                "N° étudiant :", studentID,
+                "Code Cours:", courseID,
+        };
+        int n = JOptionPane.showConfirmDialog(null, message, "Ajouter un étudiant", JOptionPane.OK_CANCEL_OPTION);
+        if(n == JOptionPane.OK_OPTION) {
+            table.removeNote(studentID.getText(), courseID.getText());
+        }
+    }
+
+    private void deleteStudent(ActionEvent event) {
+        String message = "Quel est le numéro étudiant? ";
+        String studentID = JOptionPane.showInputDialog(this, message, "Effacer étudiant", JOptionPane.PLAIN_MESSAGE);
+        table.deleteStudent(studentID);
+    }
 
     private void quitter(ActionEvent event) {
         System.exit(0);

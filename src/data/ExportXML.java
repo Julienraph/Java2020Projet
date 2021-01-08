@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class ExportXML {
-    private Table table;
+    private final Table table;
 
     public ExportXML(Table table) {
         this.table = table;
@@ -15,7 +15,7 @@ public class ExportXML {
 
     public void exportXML() {
         try {
-            FileWriter fw = new FileWriter(new File("C:\\Users\\rjuli\\Documents\\GitHub\\Projet2020\\src", "data.xml"));
+            FileWriter fw = new FileWriter("/Users/ibra-kane/Desktop/L3/S5/Programmation & Conception en Java/Java2020Projet/src/data.xml");
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             XMLReader xmlReader = table.getXmlReader();

@@ -22,6 +22,10 @@ public class Table extends JFrame {
     private Boolean isDisplayStudent = true;
     private Boolean isProgram = true;
     int lastUpdate;
+    private static String courseN;
+    private static String courseID;
+    private static String courseC;
+
 
     public Table() {
         setLayout(new BorderLayout());
@@ -160,7 +164,30 @@ public class Table extends JFrame {
         xmlReader.getMapStudent().put(student.getIdentifier(), student);
         xmlReader.getMapStudent().get(student.getIdentifier()).getNotesMap().put("SLUIN501", 15.0);
         listStudentParameter.add(student);
-       update();
+        update();
+    }
+
+    public void addCourse(String courseID , String courseName , String courseCredit) {
+        Course course = new Course(courseID,courseName,Integer.parseInt(courseCredit));
+        xmlReader.getMapCourse().get(course.getID());
+        listTeachingUnit.add(course);
+        updateTableModelStudent();
+        updateTableModelProgram();
+    }
+
+    public void addProgram(String programID, String programName) {
+        Program program = new Program(programID,programName);
+        xmlReader.getMapProgram().get(program.getProgramID());
+        programList.add(program);
+        updateTableModelProgram();
+    }
+
+    public void addNote(String studentID, String courseID, String note){
+        Student student = verif(studentID, courseID, note);
+        if (student != null ) {
+            student.getNotesMap().put(courseID, Double.valueOf(note));
+            update();
+        }
     }
 
     /*Cette fonction permet de supprimer de la classe student un étudiant de la liste*/
@@ -178,7 +205,42 @@ public class Table extends JFrame {
     }
 
 
+    public void removeNote(String studentID, String courseID){
+        Student student = verif(studentID, courseID);
+        if (student != null) {
+            student.getNotesMap().remove(courseID);
+            update();
+        }
+    }
 
+    private Student verif(String studentID, String courseID, String note) {
+        Student student = verif(studentID, courseID);
+        if ((student != null) && !(note.equals(""))) {
+            return student;
+        } else if (student != null && (note.equals("")))
+            JOptionPane.showMessageDialog(this, "Veuillez rentrer une note.", "ERROR"
+                    , JOptionPane.ERROR_MESSAGE);
+        return null;
+    }
+
+    private Student verif(String studentID, String courseID) {
+        Student student = xmlReader.getMapStudent().get(studentID);
+        if(studentID.equals("") || courseID.equals("")) {
+            JOptionPane.showMessageDialog(this, "Veuillez remplir les informations.", "ERROR"
+                    , JOptionPane.ERROR_MESSAGE);
+        }
+        else if (student != null && !(courseID.equals("")) && !(xmlReader.getMapCourse().containsKey(courseID))) {
+            JOptionPane.showMessageDialog(this, "Veuillez saisir un cours existant.", "ERROR"
+                    , JOptionPane.ERROR_MESSAGE);
+        }
+        else if (student != null && !(studentID.equals("") || courseID.equals("")) && xmlReader.getMapCourse().containsKey(courseID)) {
+            return student;
+        }
+        else if (student == null){
+            JOptionPane.showMessageDialog(this, "Veuillez saisir un numéro étudiant existant.", "ERROR"
+                    , JOptionPane.ERROR_MESSAGE);}
+        return null;
+    }
 
     public String[][] getData() {
         return data;
@@ -198,5 +260,28 @@ public class Table extends JFrame {
 
     public Boolean getDisplayStudent() {
         return isDisplayStudent;
+    }
+    public void setCourseN(String courseN) {
+        this.courseN = courseN;
+    }
+
+    public void setCourseID(String courseID) {
+        this.courseID = courseID;
+    }
+
+    public void setCourseC(String courseC) {
+        this.courseC = courseC;
+    }
+
+    public static String getCourseN() {
+        return courseN;
+    }
+
+    public static String getCourseID() {
+        return courseID;
+    }
+
+    public static String getCourseC() {
+        return courseC;
     }
 }
