@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="fr" xml:lang="fr">
+<head>
+    <title>Sujet du projet</title>
+    <link rel="shortcut icon" href="//lms.univ-cotedazur.fr/pluginfile.php/1/theme_fordson/favicon/1617197647/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, Sujet du projet" />
+<link rel="stylesheet" type="text/css" href="https://lms.univ-cotedazur.fr/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://lms.univ-cotedazur.fr/theme/styles.php/fordson/1617197647_1614675659/all" />
+<link rel="stylesheet" type="text/css" href="https://lms.univ-cotedazur.fr/mod/book/tool/print/print.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/lms.univ-cotedazur.fr","sesskey":"LNxKG7y7oy","sessiontimeout":"7200","themerev":"1617197647","slasharguments":1,"theme":"fordson","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1617176715","admin":"admin","svgicons":true,"usertimezone":"Europe\/Paris","contextid":484298,"langrev":1619576130,"templaterev":"1617176715"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/lms.univ-cotedazur.fr\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/lms.univ-cotedazur.fr\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/lms.univ-cotedazur.fr\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/lms.univ-cotedazur.fr\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/lms.univ-cotedazur.fr\/theme\/yui_combo.php?m\/1617176715\/","combine":true,"comboBase":"https:\/\/lms.univ-cotedazur.fr\/theme\/yui_combo.php?","ext":false,"root":"m\/1617176715\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_badge-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_language-form":{"requires":["base","node","event","node-event-simulate","moodle-core_availability-form"]},"moodle-availability_maxviews-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-recordings":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-rooms":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-modform":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-imports":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-broker":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_checklist-linkselect":{"requires":["node","event-valuechange"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_mediagallery-mediabox":{"requires":["base","node","selector-css3"]},"moodle-mod_mediagallery-base":{"requires":["base","node","selector-css3","dd-constrain","dd-proxy","dd-drop","dd-plugin","moodle-core-notification","event"]},"moodle-mod_offlinequiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_offlinequiz-offlinequizquestionbank":{"requires":["base","event","node","io","io-form","yui-later","moodle-question-qbankmanager","moodle-question-chooser","moodle-question-searchform","moodle-core-notification"]},"moodle-mod_offlinequiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_offlinequiz-modform":{"requires":["base","node","event"]},"moodle-mod_offlinequiz-util":{"requires":["node"],"use":["moodle-mod_offlinequiz-util-base"],"submodules":{"moodle-mod_offlinequiz-util-base":{},"moodle-mod_offlinequiz-util-slot":{"requires":["node","moodle-mod_offlinequiz-util-base"]},"moodle-mod_offlinequiz-util-page":{"requires":["node","moodle-mod_offlinequiz-util-base"]}}},"moodle-mod_offlinequiz-randomquestion":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_offlinequiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_offlinequiz-offlinequizbase","moodle-mod_offlinequiz-util-base","moodle-mod_offlinequiz-util-page","moodle-mod_offlinequiz-util-slot","moodle-course-util"]},"moodle-mod_offlinequiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_offlinequiz-util","querystring-parse"]},"moodle-mod_offlinequiz-offlinequizbase":{"requires":["base","node"]},"moodle-mod_offlinequiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_offlinequiz-offlinequizbase","moodle-mod_offlinequiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-format_grid-gridkeys":{"requires":["event-nav-keys"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_htmlplus-codemirror":{"requires":["moodle-atto_htmlplus-codemirror-skin"]},"moodle-atto_htmlplus-beautify":{},"moodle-atto_htmlplus-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_htmlplus-beautify","moodle-atto_htmlplus-codemirror","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_panoptobutton-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_styles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/lms.univ-cotedazur.fr\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/lms.univ-cotedazur.fr\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1617176715\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/lms.univ-cotedazur.fr\/lib\/javascript.php\/1617176715\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/lms.univ-cotedazur.fr\/lib\/javascript.php\/1617176715\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@2.7.8\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body  id="page-mod-book-print" class="format-onetopic  path-mod path-mod-book gecko dir-ltr lang-fr yui-skin-sam yui3-skin-sam lms-univ-cotedazur-fr pagelayout-embedded course-19409 context-484298 cmid-224000 category-231 ">
+<div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
+
+<div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Passer au contenu principal</a>
+</div><script src="https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/babel-polyfill/polyfill.min.js"></script>
+<script src="https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/mdn-polyfills/polyfill.js"></script>
+<script src="https://lms.univ-cotedazur.fr/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script src="https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<div id="page">
+    <div id="page-content" class="d-block">
+        <div role="main"><span id="maincontent"></span><div class="book p-4">
+    <div class="text-right"><a onclick="window.print();return false;" class="hidden-print" href="#"><img class="icon icon" alt="Imprimer tout le livre" title="Imprimer tout le livre" src="https://lms.univ-cotedazur.fr/theme/image.php/fordson/booktool_print/1617197647/book" />Imprimer tout le livre</a></div>
+    <div class="text-center p-b-1 book_title"><h1>Sujet du projet</h1></div>
+    <div class="book_info w-100 p-t-3 d-inline-block">
+        <div class="w-50 float-left">
+            <table>
+                <tr>
+                    <td>
+                        Site:
+                    </td>
+                    <td class="p-l-1">
+                        <a href="https://lms.univ-cotedazur.fr">LMS UCA</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cours:
+                    </td>
+                    <td class="p-l-1">
+                        SLUIN502 - UE Programmation et conception orientee objet
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Livre:
+                    </td>
+                    <td class="p-l-1">
+                        Sujet du projet
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="w-50 float-left">
+            <table class="float-right">
+                <tr>
+                    <td>
+                        Imprimé par:
+                    </td>
+                    <td class="p-l-1">
+                        julien Raphael
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:
+                    </td>
+                    <td class="p-l-1">
+                        lundi 17 mai 2021, 16:16
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="w-100">
+        <div class="p-b-2 p-t-2"><div class="book_toc_numbered"><a name="toc"></a><h2 class="text-center p-b-2">Table des matières</h2><ul><li><a title="1. Les données à manipuler" class="font-weight-bold text-decoration-none" href="#ch3907">1. Les données à manipuler</a></li><li><a title="2. Représentation" class="font-weight-bold text-decoration-none" href="#ch3908">2. Représentation</a></li><li><a title="3. Travail demandé" class="font-weight-bold text-decoration-none" href="#ch3909">3. Travail demandé</a><ul><li><a title="3.1. Jalon 1" class="text-decoration-none" href="#ch3910">3.1. Jalon 1</a></li><li><a title="3.2. Jalon 2" class="text-decoration-none" href="#ch3911">3.2. Jalon 2</a></li><li><a title="3.3. Jalon 3" class="text-decoration-none" href="#ch3912">3.3. Jalon 3</a></li><li><a title="3.4. Jalon 4" class="text-decoration-none" href="#ch3913">3.4. Jalon 4</a></li></ul></li><li><a title="4. Aide technique" class="font-weight-bold text-decoration-none" href="#ch3914">4. Aide technique</a><ul><li><a title="4.1. Lecture d&#039;un fichier XML" class="text-decoration-none" href="#ch3915">4.1. Lecture d'un fichier XML</a></li></ul></li><li><a title="5. FAQ" class="font-weight-bold text-decoration-none" href="#ch3916">5. FAQ</a><ul><li><a title="5.1. Les fichiers XML" class="text-decoration-none" href="#ch4142">5.1. Les fichiers XML</a></li><li><a title="5.2. La modélisation" class="text-decoration-none" href="#ch4143">5.2. La modélisation</a></li><li><a title="5.3. Fonctionnalités demandées" class="text-decoration-none" href="#ch4144">5.3. Fonctionnalités demandées</a></li></ul></li></ul></div></div>
+    </div>
+    <div class="w-100">
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3907"><h2 class="text-center p-b-2">1. Les données à manipuler</h2><p>Un <strong>cours</strong> est l'unité d'enseignement de base d'une université. Il est identifié par un <em>code unique</em>. Chaque cours dispose d'un <em>nom</em> et est associé à un certain nombre de <em>crédits</em>.</p>
+<p>Un <strong>bloc</strong> représente une unité d'enseignement plus souple que le cours. Comme les cours, ils sont identifiés par un <em>code unique</em> et dispose d'un <em>nom</em> et d'un nombre de <em>crédits</em>. Il en existe plusieurs types :</p>
+<ul>
+<li><span style="font-style: italic; font-size: 1rem;">Un </span><strong style="font-style: italic; font-size: 1rem;">bloc simple</strong> est juste un cours.</li>
+<li style="font-style: italic; font-size: 1rem;">Un <strong>bloc à options</strong> est composé de plusieurs cours portant le même nombre de crédits. C'est aussi le nombre de crédits du bloc.</li>
+<li><span style="font-style: italic; font-size: 1rem;">Un </span><strong style="font-style: italic; font-size: 1rem;">bloc composite</strong><span style="font-style: italic; font-size: 1rem;"> est composé de plusieurs cours. Le nombre de crédits du bloc est la somme des crédits des UE qui le composent.</span></li>
+</ul>
+<p></p>
+<p>Un <strong>programme</strong> est une <em>liste de blocs</em> à obtenir pour valider une étape. Chaque programme est identifié par un <em>code unique</em> et un <em>nom</em>.</p>
+<p>Un <strong>étudiant</strong> est caractérisé par un <em>identifiant,</em> son <em>nom</em> et son <em>prénom</em>. Un étudiant peut être inscrit à (au plus) un <em>programme.</em> Il dispose également de <em>notes</em> dans des UE, indépendamment du programme qu'il suit.</p>
+<p>Une <strong>note</strong> est soit la valeur ABI pour signaler l'absence aux examens soit une valeur numérique comprise entre 0 et 20.</p>
+<p>Pour <strong>valider un programme</strong>, il faut obtenir la moyenne pondérée sur les blocs qui le composent. Le poids de chaque bloc est le nombre de crédits qu'il porte.</p>
+<ul>
+<li>La note d'un bloc simple est la note du cours associé.</li>
+<li style="font-size: 1rem;">La note d'un bloc à options est le maximums des notes obtenues sur les cours qui le composent.</li>
+<li>La note d'un bloc composite est la moyenne pondérée des blocs qui le composent.</li>
+</ul></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3908"><h2 class="text-center p-b-2">2. Représentation</h2><p>L'ensemble des données est obtenu à l'aide d'un fichier XML. Le fichier se structure selon la grammaire suivante :</p>
+<p><span style="font-family: 'courier new', courier, monospace;"><strong style="font-family: 'courier new', courier, monospace; font-size: 1rem;">start</strong><span style="font-size: 1rem;">          ::= <strong>preamble data</strong></span></span><br /><span style="font-family: 'courier new', courier, monospace;"> <strong>preamble </strong>      ::= &lt;?xml version="1.0"?&gt;</span><br /> <span style="font-family: 'courier new', courier, monospace;"><strong>data</strong>           ::= &lt;data&gt; <strong>data_item</strong>* &lt;/data&gt;</span><br /><span style="font-family: 'courier new', courier, monospace;"><strong>data_item</strong>      ::= <strong>course</strong> | <strong>program</strong> | <strong>student<br /><br /></strong></span><span style="font-family: 'courier new', courier, monospace;"><strong>course</strong>         ::= &lt;course&gt; <strong>identifier name credits</strong> &lt;/course&gt;<br /><br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>program</strong>        ::= &lt;program&gt; <strong>identifier name bloc</strong>* &lt;/program&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>bloc</strong>           ::= <strong>simple_bloc</strong> | <strong>option_bloc</strong> | <strong>composite_bloc<br /></strong></span><span style="font-family: 'courier new', courier, monospace;"><strong>simple_bloc</strong>    ::= <strong>item<br /></strong></span><span style="font-family: 'courier new', courier, monospace;"><strong>option_bloc</strong>    ::= &lt;option&gt; <strong>identifier name item</strong>+ &lt;/option&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>composite_bloc</strong> ::= &lt;composite&gt; <strong>identifier name item</strong>+ &lt;/composite&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong><br />student</strong>        ::= &lt;student&gt; <strong>identifier name surname program</strong>? <strong>grade</strong>* &lt;/student&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>grade</strong>          ::= &lt;grade&gt; <strong>item value</strong> &lt;/grade&gt;<br /><br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>identifier</strong>     ::= &lt;identifier&gt; <em>string</em> &lt;/identifier&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>name</strong>           ::= &lt;name&gt; <em>string</em> &lt;/name&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>surname</strong>        ::= &lt;surname&gt; <em>string</em> &lt;/surname&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>credits</strong>        ::= &lt;/credits&gt; <em>integer</em> &lt;credits&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>item</strong>           ::= &lt;item&gt; <em>string</em> &lt;/item&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>program</strong>        ::= &lt;program&gt; <em>string</em> &lt;/program&gt;<br /></span><span style="font-family: 'courier new', courier, monospace;"><strong>value</strong>          ::= &lt;value&gt; ABI | <em>double</em> &lt;/value&gt;</span></p>
+<p>Un <a href="https://lms.univ-cotedazur.fr/mod/resource/view.php?id=223757">exemple de fichier</a> vous est proposé pour effectuer vos tests.</p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3909"><h2 class="text-center p-b-2">3. Travail demandé</h2><p>Ce projet est à réaliser à plusieurs. Vous devez former un groupe de 3 étudiants pour le mener à bien. Des groupes de 2 personnes sont autorisés si une bonne justification est apportée.</p>
+<p>Vous devrez déposer votre travail dans la boîte de dépôt du projet. Ne faites qu'un rendu par groupe : une seule personne s'en charge. La date limite est fixée au 8 janvier 23h59.</p>
+<p>Vous devez remettre l'ensemble du code source réalisé (pas les classes compilées ni les fichiers liés à votre IDE) et un rapport. Ce dernier devra couvrir a minima les points suivants :</p>
+<ul>
+<li>Les noms des membres du groupes (ça peut paraître bête mais j'ai déjà vu des oublis).</li>
+<li>Les fonctionnalités implémentées.</li>
+<li>La contribution de chacun dans le projet. La façon dont vous avez organisé votre travail et comment vous vous l'êtes partagé doit apparaître clairement.</li>
+<li>Les choix de conception réalisés. Ici, soyez concis et précis. Il est inutile de recopier et paraphraser tout votre code.</li>
+<li>Les difficultés rencontrées et les limitations ou bugs connus de votre programme.</li>
+<li>Les détails techniques pour lancer votre application. Ce n'est pas à moi de chercher votre <span style="font-family: 'courier new', courier, monospace;">main</span> ni de choisir lequel lancer si vous en avez plusieurs. Si vous exploitez la ligne de commande, il faut l'indiquer.</li>
+<li>Tout autre information que vous jugerez pertinente.</li>
+</ul></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3910"><h3 class="text-center p-b-2">3.1. Jalon 1</h3><p>Dans ce premier jalon, on vous demande de produire un procès-verbal (PV) d'un programme en vue d'un jury.</p>
+<p>Un PV sera donné sous la forme d'un <a href="https://en.wikipedia.org/wiki/Comma-separated_values">fichier CSV</a>. La première ligne est une ligne d'entête qui donne le nom de chaque colonne :</p>
+<ul>
+<li>N° Étudiant.</li>
+<li>Nom.</li>
+<li>Prénom.</li>
+<li>Le nom du programme.</li>
+<li>Le nom de chaque bloc du programme immédiatement suivi du nom des cours constitutifs s'il y a lieu.</li>
+</ul>
+<p>Les lignes suivantes listent les étudiants inscrit dans le programme choisi avec leurs notes correspondantes. Les quatre dernières lignes donnent des indications statistiques sur les notes de la promotions : note min, max et moyenne ainsi que l'écart-type pour chaque colonne numérique.</p>
+<p>Des exemples de fichiers CSV obtenus avec le jeu de données fourni sont disponibles pour les programmes <a href="https://lms.univ-cotedazur.fr/mod/resource/view.php?id=223758">L3I</a> et <a href="https://lms.univ-cotedazur.fr/mod/resource/view.php?id=223759">L3MI</a>.</p>
+<p>Comme certains tableurs sont tatillons sur l'import des fichiers CSV (problèmes de localisation), voici une capture d'écran du rendu d'un tel fichier.</p>
+<p><img src="https://lms.univ-cotedazur.fr/pluginfile.php/484298/mod_book/chapter/3910/view.png" width="1000" /></p>
+<p>Les enjeux de cette partie sont :</p>
+<ul>
+<li>La représentation des données.</li>
+<li>Leur importation depuis le fichier XML.</li>
+<li>Leur traitement (calculs de moyennes et de statistiques).</li>
+<li>L'exportation des données traitées vers un fichier CSV.</li>
+</ul></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3911"><h3 class="text-center p-b-2">3.2. Jalon 2</h3><p>Le premier jalon est relativement strict dans ce que vous devez faire. Les formats d'entrée et de sortie sont spécifiés et vous n'avez que peu de libertés. À partir du deuxième jalon, vous allez devoir faire vos propres choix. Il s'agit de développer une interface graphique. Vous devrez vous soucier de l'ergonomie et de la convivialité de votre application.</p>
+<p>Dans ce jalon, on demande les fonctionnalités suivantes :</p>
+<ul>
+<li>Sélectionner un programme et afficher les étudiants qui le suivent avec leurs notes. Il s'agit plus ou moins de refaire le PV du premier jalon dans votre interface.</li>
+<li>Sélectionner spécifiquement des programmes ou des blocs et n'afficher que les notes associées.</li>
+<li>Afficher toutes les notes d'un étudiant. Notez que dans le jeu de données fourni, chaque étudiant n'a de notes que dans un programme. Ce n'est pas une obligation. Un étudiant pourrait avoir des notes dans plusieurs programmes ou dans des cours qui n'apparaissent dans aucun programme.</li>
+<li>Avoir une vue hiérarchisée d'un programme pour en visualiser la structure.</li>
+</ul>
+<p>Comme vous avez dû le remarquer, on ne vous demande que de visualiser les données dans ce jalon. Vous n'avez pas à les modifier.</p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3912"><h3 class="text-center p-b-2">3.3. Jalon 3</h3><p>On cherche désormais à pouvoir ajouter des données via l'interface graphique. On veut pouvoir :</p>
+<ul>
+<li>Ajouter/Modifier/Supprimer une note d'un cours (et donc recalculer les moyennes où elle intervient).</li>
+<li>Ajouter/Supprimer un étudiant.</li>
+<li>Ajouter <span style="color: #ff0000;">un cours ou</span> un programme (interdiction de supprimer les <span style="color: #ff0000;">cours ou</span> programmes déjà présents). <span style="color: #ff0000;">Maj du 13/12/2020.</span></li>
+<li>Sauvegarder les données modifiées au format XML. Elles devront être rechargées automatiquement à la prochaine ouverture de l'application.</li>
+</ul></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3913"><h3 class="text-center p-b-2">3.4. Jalon 4</h3><p>Vous avez désormais une application fonctionnelle. Il vous reste du temps ? Vous voulez aller plus loin ? Ce jalon est libre ! Vous pouvez ajouter autant de fonctionnalités que vous le souhaitez pour améliorer le projet. Il s'agit de points bonus (et plafonnés). Faites-vous plaisir mais n'en faites pas trop !</p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3914"><h2 class="text-center p-b-2">4. Aide technique</h2><p>Ce chapitre contient différentes aides techniques pour le projet. Il s'étoffera en fonction des problèmes que vous soulèverez.</p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3915"><h3 class="text-center p-b-2">4.1. Lecture d'un fichier XML</h3><p>Voici le schéma pour lire un fichier XML.</p>
+<pre>import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class XMLTest {
+    public static void main(String[] args) {
+        try {
+            File file = new File("some path");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(file); // ouverture et lecture du fichier XML
+            doc.getDocumentElement().normalize(); // normalise le contenu du fichier, opération très conseillée
+            Element root = doc.getDocumentElement(); // la racine de l'arbre XML
+            
+            // c'est parti pour l'exploration de l'arbre
+            
+        } catch (Exception e) {
+            // oups, pas normal
+        }
+    }
+    
+    // Extrait la liste des fils de l'élément item dont le tag est name
+    private static List&lt;Element&gt;<element> getChildren(Element item, String name) {
+        NodeList nodeList = item.getChildNodes();
+        List&lt;Element&gt;<element> children = new ArrayList&lt;&gt;();
+        for (int i = 0; i &lt; nodeList.getLength(); i++) {
+            Node node = nodeList.item(i);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) nodeList.item(i); // cas particulier pour nous où tous les noeuds sont des éléments
+                if (element.getTagName().equals(name)) {
+                    children.add(element);
+                }
+            }
+        }
+        return children;
+    }
+}
+</element></element></pre>
+<p>Lorsqu'on est sur une feuille de l'arbre, on peut obtenir le contenu de l'élément à l'aide de la méthode <span style="font-family: 'courier new', courier, monospace;">getTextContent()</span>.</p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch3916"><h2 class="text-center p-b-2">5. FAQ</h2><p>Les différentes questions reçues sont reproduites et organisées dans les sous-chapitres qui suivent.</p>
+<p>Dernière mise à jour le 13/12/2020.</p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch4142"><h3 class="text-center p-b-2">5.1. Les fichiers XML</h3><h4>Problèmes liés à l'analyse du fichier xml.</h4>
+<h5>Que fait exactement la méthode getElementsByTagName ?</h5>
+<p>Un fichier xml code un arbre. La grammaire utilisée est :</p>
+<pre><strong>node</strong> ::= &lt;<strong>tag</strong>&gt; (<strong>node</strong> | <strong>text</strong>)* &lt;/<strong>tag</strong>&gt;
+<strong>tag</strong>  ::= <em>string</em><br /><strong>text</strong> ::= <em>string</em></pre>
+<p>L'appel <span style="font-family: 'courier new', courier, monospace;">node.getElementsByTagName(name)</span> renvoie la liste (sous forme de <span style="font-family: 'courier new', courier, monospace;">NodeList</span>) des descendants (directs ou indirects) de <span style="font-family: 'courier new', courier, monospace;">node</span> dont le tag est <span style="font-family: 'courier new', courier, monospace;">name</span>.</p>
+<h5>Pourquoi avoir défini la méthode getChildren ?</h5>
+<p>La méthode <span style="font-family: 'courier new', courier, monospace;">getChildren</span> a deux avantages par rapport à <span style="font-family: 'courier new', courier, monospace;">getElementsByTagName.</span> Seuls les enfants directs sont renvoyés. De plus, ils sont renvoyés sous forme de <span style="font-family: 'courier new', courier, monospace;">List&lt;Element&gt;</span> qui est plus pratique à manipuler.</p>
+<h5>Comment fonctionne une NodeList ? Et une List&lt;E&gt; ?</h5>
+<p>Sans rentrer trop dans le détail, les méthodes à utiliser sont <span style="font-family: 'courier new', courier, monospace;">getLength()</span> et <span style="font-family: 'courier new', courier, monospace;">item(int)</span> pour <span style="font-family: 'courier new', courier, monospace;">NodeList</span>. Elles correspondent à <span style="font-family: 'courier new', courier, monospace;">size()</span> et <span style="font-family: 'courier new', courier, monospace;">get(int)</span> pour une <span style="font-family: 'courier new', courier, monospace;">List&lt;E&gt;</span>. Elles renvoient respectivement le nombre d'éléments dans la liste et un élément d'indice donné.</p>
+<p>Prenez garde que la méthode <span style="font-family: 'courier new', courier, monospace;">item</span> renvoie un <span style="font-family: 'courier new', courier, monospace;">Node</span> qu'il faudra caster en <span style="font-family: 'courier new', courier, monospace;">Element</span> pour le projet. Préférez l'utilisation de <span style="font-family: 'courier new', courier, monospace;">getChildren</span>  qui automatise et simplifie le travail.</p>
+<p>Les collections étudiées à la fin du cours expliqueront toutes les subtilités des <span style="font-family: 'courier new', courier, monospace;">List&lt;E&gt;</span>.</p>
+<h5>Que fait la méthode getTextContent ?</h5>
+<p>Elle renvoie le texte du nœud sur lequel elle est appelée. Le texte d'un nœud correspond à tout ce qui n'est pas inclus entre un chevron ouvrant et le chevron fermant correspondant. Dans le cadre du projet, il ne faut donc l'utiliser que pour les feuilles du fichier xml.</p>
+<p>Exemple : Si <span style="font-family: 'courier new', courier, monospace;">node</span> est l'objet de type <span style="font-family: 'courier new', courier, monospace;">Node</span> correspondant au nœud xml</p>
+<pre>&lt;node&gt;<br />  text<br />  &lt;child&gt;child text&lt;/child&gt;<br />  other text<br />&lt;/node&gt;</pre>
+<p>alors <span style="font-family: 'courier new', courier, monospace;">node.getTextContent()</span> renvoie la chaîne <span style="font-family: 'courier new', courier, monospace;">"\n  text\n  child text\n  other text\n"</span>. Attention, les espaces et sauts de lignes sont compris.</p>
+<h5>Pourrait-on avoir un autre exemple ?</h5>
+<p>L'exécution du code suivant</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><details>
+<pre>public class XMLTest {
+    public static void main(String[] args) {
+        String example = "" +
+                "<root>\n" +
+                "  root text\n" +
+                "  <child>\n" +
+                "    child1 text\n" +
+                "    <child>grand child1 text</child>\n" +
+                "    <child>grand child2 text</child>\n" +
+                "  </child>\n" +
+                "  some other root text\n" +
+                "  <child>child2 text</child>\n" +
+                "</root>\n";
+        
+        try (InputStream is = new ByteArrayInputStream(example.getBytes())) {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(is);
+            doc.getDocumentElement().normalize();
+            Element root = doc.getDocumentElement();
+
+            System.out.println("root.getTextContent() = " + root.getTextContent());
+            System.out.println();
+
+            System.out.println("Utilisation de root.getElementsByTagName(\"child\")");
+            NodeList nodeList = root.getElementsByTagName("child");
+            for (int i = 0; i &lt; nodeList.getLength(); i++) {
+                Element element = (Element) nodeList.item(i);
+                System.out.println("element.getTextContent() = " + element.getTextContent());
+            }
+            System.out.println();
+
+            System.out.println("Utilisation de getChildren(root, \"child\")");
+            List<element> elementList = getChildren(root, "child");
+            for (int i = 0; i &lt; elementList.size(); i++) {
+                Element element = elementList.get(i);
+                System.out.println("element.getTextContent() = " + element.getTextContent());
+            }
+
+        } catch (Exception e) {
+            // oups, pas normal
+        }
+    }
+
+    // Extrait la liste des fils de l'élément item dont le tag est name
+    private static List<element> getChildren(Element item, String name) {
+        NodeList nodeList = item.getChildNodes();
+        List<element> children = new ArrayList&lt;&gt;();
+        for (int i = 0; i &lt; nodeList.getLength(); i++) {
+            Node node = nodeList.item(i);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) nodeList.item(i); // cas particulier pour nous où tous les noeuds sont des éléments
+                if (element.getTagName().equals(name)) {
+                    children.add(element);
+                }
+            }
+        }
+        return children;
+    }
+}
+</element></element></element></pre>
+</details></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>affiche</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><details>
+<pre>root.getTextContent() = 
+  root text
+  
+    child1 text
+    grand child1 text
+    grand child2 text
+  
+  some other root text
+  child2 text
+
+
+Utilisation de root.getElementsByTagName("child")
+element.getTextContent() = 
+    child1 text
+    grand child1 text
+    grand child2 text
+  
+element.getTextContent() = grand child1 text
+element.getTextContent() = grand child2 text
+element.getTextContent() = child2 text
+
+Utilisation de getChildren(root, "child")
+element.getTextContent() = 
+    child1 text
+    grand child1 text
+    grand child2 text
+  
+element.getTextContent() = child2 text
+</pre>
+</details></p>
+<p></p></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch4143"><h3 class="text-center p-b-2">5.2. La modélisation</h3><span class="filter_mathjaxloader_equation"><h5><span>Est ce que les matières composants un programme sont des matières liées uniquement au programme, c'est à dire que les matières sont créées en même temps que le programme, ou est ce que ce sont des matières prédéfinies que l'ont peu utiliser lors de la création d'un programme . Est-ce qu'on doit pouvoir créer des matières ? Ou juste créer des programmes ?</span></h5>
+<p>Les cours sont indépendants des programmes. Ils peuvent apparaître dans 0, 1, 2 ou plus programmes. Dans le jalon 3, on souhaite pouvoir également ajouter des cours. Le sujet a été mis à jour pour être plus clair à ce niveau.</p>
+<p>Le programme est créé à partir de cours préexistants (éventuellement ajoutés juste avant).</p>
+<h5>Quant est-il d'un bloc ?</h5>
+<p>Un bloc simple est un cours, la réponse précédente s'applique. Comme les blocs à options et les blocs composites sont entièrement définis par les cours qui les composent, on peut considérer qu'un bloc est lié à un programme ou indépendant. L'impact est nul.</p>
+<p>Dans le fichier xml, les blocs sont définis directement dans les programmes. Le bloc de compétences transversales est défini de manière identique dans chacun des deux programmes proposés. Vous êtes libre de traiter ce cas comme vous le souhaitez.</p>
+<h5>Comment fonctionnent les crédits ?</h5>
+<p>Les crédits servent uniquement à pondérer les notes lors du calcul de la moyenne d'une UE composite ou d'un programme.</p>
+<h5>Un étudiant peut-il avoir des notes dans plusieurs options d'un bloc optionnel ?</h5>
+<p>Le sujet l'autorise et cela peut arriver concrètement (si on mime ce qui se passe à l'université) dans certains cas particuliers (changement de maquettes, redoublement, réorientation, ...). Dans ce cas, la note du bloc est le maximum obtenu dans l'une des options.</p>
+<h5>Si un étudiant à ABI dans toutes les composantes d'un bloc à option ou d'un bloc composite, sa note au bloc est-elle 0 ou ABI ?</h5>
+<p>ABI.</p>
+<h5>Comment compte-t-on les notes manquantes ou les notes ABI dans le calcul de la moyenne et de l'écart-type ?</h5>
+<p>On ne les compte pas. Seuls les notes numériques interviennent.</p>
+<h5>Quelle formule faut-il utiliser pour calculer l'écart-type ? J'ai vu qu'il existe une formule spécifique dans le cas de données obtenues via une moyenne pondérée.</h5>
+<p>Pour un échantillon <span class="nolink">\(x\)</span> de taille <span class="nolink">\(n\)</span> et de moyenne <span class="nolink">\(\mu\)</span>, l'écart-type est <span class="nolink">\(\sqrt{\frac{1}{n} \sum_{i = 1}^n {x_i}^2 - \mu^2}\)</span>. On ignore volontairement le fait que l'échantillon soit ou non obtenu par une moyenne pondérée.</p></span></div>
+            </div>
+            <div class="p-b-2">
+            <div class="book_chapter p-t-1" id="ch4144"><h3 class="text-center p-b-2">5.3. Fonctionnalités demandées</h3><h5><span>Pour le jalon 1, doit-on ne générer un fichier CSV uniquement pour un programme spécifique ?</span></h5>
+<p><span>Oui, un procès-verbal est lié à un programme spécifique. Vous pouvez le voir sur les deux exemples de fichiers CSV proposés. La base de données mixe L3I et L3MI mais il y a un procès-verbal distinct pour chacun d'entre eux.</span></p>
+<h5><span>Pour le jalon 2, doit-on seulement afficher les notes des étudiants dans le/les programmes sélectionnés ? </span></h5>
+<p>L'affichage est basé sur des filtres. Un programme est un filtre particulier. Vous pouvez avoir un filtre par défaut qui consiste à tout afficher (peu utile dans un cas réel) et il vous faudra donner la possibilité de créer des filtres personnalisés.</p>
+<h5>Que doit-on afficher si un étudiants n'a pas de note dans un cours, bloc ou programme ?</h5>
+<p>Si un étudiant n'a pas de note, la case associée reste vide.</p>
+<h5>Qu'appelez-vous une vue hiérarchisée d'un programme ?</h5>
+<p>Un programme est composé de blocs. Un bloc peut être lui même composé de cours (blocs à options ou composite). Une vue hiérarchisée permet de visualiser ces compositions.</p>
+<p>Voici deux exemples d'affichage basique possibles. Le premier est statique, le second dynamique.</p>
+<p></p>
+<p></p>
+<p></p>
+<p><details><img src="https://lms.univ-cotedazur.fr/pluginfile.php/484298/mod_book/chapter/4144/hierarchie1.png" width="470" height="420" /></details></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><details><img src="https://lms.univ-cotedazur.fr/pluginfile.php/484298/mod_book/chapter/4144/hierarchie2.png" width="502" height="518" /></details></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p></div>
+            </div>
+    </div>
+</div></div>
+    </div>
+</div>
+<script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://lms.univ-cotedazur.fr/lib/requirejs.php/1617176715/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/jquery/jquery-3.4.1.min',
+        jqueryui: 'https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://lms.univ-cotedazur.fr/lib/javascript.php/1617176715/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://lms.univ-cotedazur.fr/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage('fr', {
+  "Audio Player": "Lecteur audio",
+  "Video Player": "Lecteur vidéo",
+  "Play": "Lecture",
+  "Pause": "Pause",
+  "Replay": "Revoir",
+  "Current Time": "Temps actuel",
+  "Duration": "Durée",
+  "Remaining Time": "Temps restant",
+  "Stream Type": "Type de flux",
+  "LIVE": "EN DIRECT",
+  "Loaded": "Chargé",
+  "Progress": "Progression",
+  "Progress Bar": "Barre de progression",
+  "progress bar timing: currentTime={1} duration={2}": "{1} de {2}",
+  "Fullscreen": "Plein écran",
+  "Non-Fullscreen": "Fenêtré",
+  "Mute": "Sourdine",
+  "Unmute": "Son activé",
+  "Playback Rate": "Vitesse de lecture",
+  "Subtitles": "Sous-titres",
+  "subtitles off": "Sous-titres désactivés",
+  "Captions": "Sous-titres transcrits",
+  "captions off": "Sous-titres transcrits désactivés",
+  "Chapters": "Chapitres",
+  "Descriptions": "Descriptions",
+  "descriptions off": "descriptions désactivées",
+  "Audio Track": "Piste audio",
+  "Volume Level": "Niveau de volume",
+  "You aborted the media playback": "Vous avez interrompu la lecture de la vidéo.",
+  "A network error caused the media download to fail part-way.": "Une erreur de réseau a interrompu le téléchargement de la vidéo.",
+  "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Cette vidéo n'a pas pu être chargée, soit parce que le serveur ou le réseau a échoué ou parce que le format n'est pas reconnu.",
+  "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La lecture de la vidéo a été interrompue à cause d'un problème de corruption ou parce que la vidéo utilise des fonctionnalités non prises en charge par votre navigateur.",
+  "No compatible source was found for this media.": "Aucune source compatible n'a été trouvée pour cette vidéo.",
+  "The media is encrypted and we do not have the keys to decrypt it.": "Le média est chiffré et nous n'avons pas les clés pour le déchiffrer.",
+  "Play Video": "Lire la vidéo",
+  "Close": "Fermer",
+  "Close Modal Dialog": "Fermer la boîte de dialogue modale",
+  "Modal Window": "Fenêtre modale",
+  "This is a modal window": "Ceci est une fenêtre modale",
+  "This modal can be closed by pressing the Escape key or activating the close button.": "Ce modal peut être fermé en appuyant sur la touche Échap ou activer le bouton de fermeture.",
+  ", opens captions settings dialog": ", ouvrir les paramètres des sous-titres transcrits",
+  ", opens subtitles settings dialog": ", ouvrir les paramètres des sous-titres",
+  ", opens descriptions settings dialog": ", ouvrir les paramètres des descriptions",
+  ", selected": ", sélectionné",
+  "captions settings": "Paramètres des sous-titres transcrits",
+  "subtitles settings": "Paramètres des sous-titres",
+  "descriptions settings": "Paramètres des descriptions",
+  "Text": "Texte",
+  "White": "Blanc",
+  "Black": "Noir",
+  "Red": "Rouge",
+  "Green": "Vert",
+  "Blue": "Bleu",
+  "Yellow": "Jaune",
+  "Magenta": "Magenta",
+  "Cyan": "Cyan",
+  "Background": "Arrière-plan",
+  "Window": "Fenêtre",
+  "Transparent": "Transparent",
+  "Semi-Transparent": "Semi-transparent",
+  "Opaque": "Opaque",
+  "Font Size": "Taille des caractères",
+  "Text Edge Style": "Style des contours du texte",
+  "None": "Aucun",
+  "Raised": "Élevé",
+  "Depressed": "Enfoncé",
+  "Uniform": "Uniforme",
+  "Dropshadow": "Ombre portée",
+  "Font Family": "Famille de polices",
+  "Proportional Sans-Serif": "Polices à chasse variable sans empattement (Proportional Sans-Serif)",
+  "Monospace Sans-Serif": "Polices à chasse fixe sans empattement (Monospace Sans-Serif)",
+  "Proportional Serif": "Polices à chasse variable avec empattement (Proportional Serif)",
+  "Monospace Serif": "Polices à chasse fixe avec empattement (Monospace Serif)",
+  "Casual": "Manuscrite",
+  "Script": "Scripte",
+  "Small Caps": "Petites capitales",
+  "Reset": "Réinitialiser",
+  "restore all settings to the default values": "Restaurer tous les paramètres aux valeurs par défaut",
+  "Done": "Terminé",
+  "Caption Settings Dialog": "Boîte de dialogue des paramètres des sous-titres transcrits",
+  "Beginning of dialog window. Escape will cancel and close the window.": "Début de la fenêtre de dialogue. La touche d'échappement annulera et fermera la fenêtre.",
+  "End of dialog window.": "Fin de la fenêtre de dialogue."
+});
+
+    });
+});;
+M.util.js_pending('filter_syntaxhighlighter/hljs'); require(['filter_syntaxhighlighter/hljs'], function(amd) {amd.initHighlighting(); M.util.js_complete('filter_syntaxhighlighter/hljs');});;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+  M.util.js_complete('theme_boost/loader');
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(484298, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Modifi\u00e9 le","name":"Nom","error":"Erreur","info":"Information","yes":"Oui","no":"Non","ok":"OK","cancel":"Annuler","confirm":"Confirmer","areyousure":"En \u00eates-vous bien s\u00fbr\u00a0?","closebuttontitle":"Fermer","unknownerror":"Erreur inconnue","file":"Fichier","url":"URL"},"repository":{"type":"Type","size":"Taille","invalidjson":"Cha\u00eene JSON non valide","nofilesattached":"Aucun fichier joint","filepicker":"S\u00e9lecteur de fichiers","logout":"D\u00e9connexion","nofilesavailable":"Aucun fichier disponible","norepositoriesavailable":"D\u00e9sol\u00e9, aucun de vos d\u00e9p\u00f4ts actuels ne peut retourner de fichiers dans le format requis.","fileexistsdialogheader":"Le fichier existe","fileexistsdialog_editor":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint au texte que vous modifiez.","fileexistsdialog_filemanager":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint","renameto":"Renommer \u00e0 \u00ab\u00a0{$a}\u00a0\u00bb","referencesexist":"Ce fichier est utilis\u00e9 comme source par {$a} alias.","select":"S\u00e9lectionnez"},"admin":{"confirmdeletecomments":"Voulez-vous vraiment supprimer des commentaires\u00a0?","confirmation":"Confirmation"},"debug":{"debuginfo":"Info de d\u00e9bogage","line":"Ligne","stacktrace":"Trace de la pile"},"langconfig":{"labelsep":"&nbsp;"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"MathJax.Hub.Config({\r\n    config: [\"Accessible.js\", \"Safe.js\"],\r\n    errorSettings: { message: [\"!\"] },\r\n    skipStartupTypeset: true,\r\n    messageStyle: \"none\"\r\n});\r\n","lang":"fr"});
+});
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+M.util.help_popups.setup(Y);
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.typeset();
+});
+ M.util.js_pending('random60a27abace17b2'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random60a27abace17b2'); });
+})();
+//]]>
+</script>
+
+</body>
+</html>
